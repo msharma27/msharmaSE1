@@ -73,6 +73,9 @@ public class Registration {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+	public String Validation_message(){
+		return "All fields are required!";
+		
+	}
 	
 }

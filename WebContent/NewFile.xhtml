@@ -9,36 +9,72 @@
  <title> Registration Form </title>
  <meta charset="utf-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1" />
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"></link>
 </h:head>
+
+<div class="jumbotron text-center">
+  <h1>Registration</h1>
+  <br/><br/>
+  <label for="username">Have an account with us? </label>
+  <a href="login.xhtml">Login here</a> 
+</div>
 
 
 <h:body>
- <div class="jumbotron text-center">
-  <h1>Registration</h1>
- </div>
- <div class="jumbotron text-center">
-
+  
+  <div class="container">
+  <div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
   <h:form>
-     <h:messages/>
-     First name: <h:inputText value="#{registration.firstname}" required="true" />
-     <br/><br/> 
-     Last name: <h:inputText value="#{registration.lastname}" required="true" />
-     <br/><br/>
-     Address: <h:inputText value="#{registration.address}" required="true"/> 
-     <br/><br/> 
-     Phone number: <h:inputText id="number" value="#{registration.phone_number}" required="true"/> 
-     <br/><br/> 
-     Your email: <h:inputText id="email-id" value="#{registration.email}" required="true" /> 
-     <br/><br/> 
-     User name: <h:inputText  value="#{registration.user_name}" required="true" /> 
-     <br/><br/> 
-     Password: <h:inputSecret id="password-id" value="#{registration.password}" required="true"  /> 
-     <br/><br/>  
-     <h:commandButton id="submit-button" class="btn btn-primary btn-lg" value="Submit" action="Response.xhtml"/>
-
-   </h:form>
+<!--    <h:messages /> -->
+   <font color="red">All fields are required! </font>
+   <br/><br/>
+   <div class="form-group">
+    <label for="firstname">First name</label>
+    <h:inputText styleClass="form-control" value="#{registration.firstname}" required="true" />
+   </div>
+   
+   <div class="form-group">
+    <label for="lastname">Last name</label>
+    <h:inputText styleClass="form-control" value="#{registration.lastname}" required="true" /> 
   </div>
- </h:body>
+  
+   <div class="form-group">
+    <label for="address">Address</label>
+    <h:inputText styleClass="form-control" value="#{registration.address}" required="true" />
+   </div>
+   
+   <div class="form-group">
+    <label for="lastname">Phone number</label>
+    <h:inputText styleClass="form-control" value="#{registration.lastname}" required="true" />
+   </div>
+   
+   <div class="form-group">
+    <label for="email">Email</label>
+    <h:inputText styleClass="form-control" value="#{registration.email}" required="true" />
+   </div>
+   
+   <div class="form-group">
+    <label for="user_name">User name</label>
+    <h:inputText styleClass="form-control" value="#{registration.user_name}" required="true" />
+   </div>
+   
+   <div class="form-group">
+    <label for="password">Password</label>
+    <h:inputSecret id="password-id" styleClass="form-control" value="#{registration.password}" required="true" />
+   </div>
+  
+  <h:commandButton id="submit-button" class="btn btn-primary" value="Submit" action="Response.xhtml"/>
+  <br/><br/>
+  </h:form>
+ </div>
+ <div class="col-md-4"></div>
+ </div>
+ </div>
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</h:body>
 </html>
