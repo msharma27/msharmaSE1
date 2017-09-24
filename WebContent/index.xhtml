@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+ <title> Index Page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+</h:head>
+
+<div class="jumbotron text-center">
+  <h1>Welcome!</h1>
+  
+</div>
+
+<h:body>
+ <div class="jumbotron text-center">
+  <h:form> 
+<!--      <p><a class="btn btn-primary btn-lg" href="login.xhtml" role="button">Login</a></p> -->
+      <h:commandButton id="Login" class="btn btn-primary btn-lg" value="login" action="login.xhtml"/>
+
+     <br/><br/>
+<!--      <p><a class="btn btn-primary btn-lg" href="NewFile.xhtml" role="button">Register</a></p> -->
+      <h:commandButton id="Register" class="btn btn-primary btn-lg" value="Register" action="NewFile.xhtml"/>  
+  </h:form>
+ </div>
+</h:body>
+
+</html>
