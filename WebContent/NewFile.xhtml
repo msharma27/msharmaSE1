@@ -16,7 +16,7 @@
   <h1>Registration</h1>
   <br/><br/>
   <label for="username">Have an account with us? </label>
-  <a href="login.xhtml">Login here</a> 
+  <a href="login.xhtml">Sign In</a> 
 </div>
 
 
@@ -32,37 +32,54 @@
    <br/><br/>
    <div class="form-group">
     <label for="firstname">First name</label>
-    <h:inputText styleClass="form-control" value="#{registration.firstname}" required="true" />
+    <h:inputText id="firstname" styleClass="form-control" value="#{registration.firstname}" required="true" requiredMessage="First Name Required" validatorMessage="First Name can only be characters">
+    <f:validateRegex pattern="[a-zA-Z]*"></f:validateRegex>
+    </h:inputText>
+    <h:message for="firstname" class="form-text text-muted"></h:message>  
    </div>
    
    <div class="form-group">
     <label for="lastname">Last name</label>
-    <h:inputText styleClass="form-control" value="#{registration.lastname}" required="true" /> 
+    <h:inputText id="lastname" styleClass="form-control" value="#{registration.lastname}" required="true" requiredMessage="Last Name Required" validatorMessage="Last Name can only be characters">
+    <f:validateRegex pattern="[a-zA-Z]*"></f:validateRegex>
+    </h:inputText>
+    <h:message for="lastname" class="form-text text-muted"></h:message>  
   </div>
   
    <div class="form-group">
     <label for="address">Address</label>
-    <h:inputText styleClass="form-control" value="#{registration.address}" required="true" />
+    <h:inputText id="address" styleClass="form-control" value="#{registration.address}" required="true" requiredMessage="Address Required">
+    </h:inputText>
+    <h:message for="address" class="form-text text-muted"></h:message>  
    </div>
    
    <div class="form-group">
-    <label for="lastname">Phone number</label>
-    <h:inputText styleClass="form-control" value="#{registration.lastname}" required="true" />
+    <label for="phone_number">Phone number</label>
+    <h:inputText id="phone_number" styleClass="form-control" value="#{registration.phone_number}" required="true" requiredMessage="Phone Number Required" validatorMessage="Invalid Phone Number Format">
+    <f:validateLength minimum="10" maximum="10"></f:validateLength>
+    <f:validateRegex pattern="[0-9]*"></f:validateRegex>
+    </h:inputText>
+    <h:message for="phone_number" class="form-text text-muted"></h:message>  
    </div>
    
    <div class="form-group">
     <label for="email">Email</label>
-    <h:inputText styleClass="form-control" value="#{registration.email}" required="true" />
+    <h:inputText id="email" styleClass="form-control" value="#{registration.email}" required="true" requiredMessage="Email Required" validatorMessage="Incorrect Email Format">
+    <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+    </h:inputText>
+	<h:message for="email" class="form-text text-muted"></h:message>  
    </div>
    
    <div class="form-group">
     <label for="user_name">User name</label>
-    <h:inputText styleClass="form-control" value="#{registration.user_name}" required="true" />
+    <h:inputText id="username" styleClass="form-control" value="#{registration.user_name}" required="true" requiredMessage="Username Required" />
+   	<h:message for="username" class="form-text text-muted"></h:message> 
    </div>
    
    <div class="form-group">
     <label for="password">Password</label>
-    <h:inputSecret id="password-id" styleClass="form-control" value="#{registration.password}" required="true" />
+    <h:inputSecret id="password" styleClass="form-control" value="#{registration.password}" required="true" requiredMessage="Password Required"/>
+   	<h:message for="password" class="form-text text-muted"></h:message> 
    </div>
   
   <h:commandButton id="submit-button" class="btn btn-primary" value="Submit" action="Response.xhtml"/>
